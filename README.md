@@ -1,67 +1,3 @@
-# test
-Roles Migration
-
-javascript
-Copy code
-'use strict';
-module.exports = {
-  up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('roles', {
-      id: {
-        allowNull: false,
-        autoIncrement: true,
-        primaryKey: true,
-        type: Sequelize.INTEGER
-      },
-      name: {
-        type: Sequelize.STRING
-      },
-      description: {
-        type: Sequelize.STRING
-      },
-      createdAt: {
-        allowNull: false,
-        type: Sequelize.DATE,
-        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP')
-      }
-    });
-  },
-  down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('roles');
-  }
-};
-Permissions Migration
-
-javascript
-Copy code
-'use strict';
-module.exports = {
-  up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('permissions', {
-      id: {
-        allowNull: false,
-        autoIncrement: true,
-        primaryKey: true,
-        type: Sequelize.INTEGER
-      },
-      api: {
-        type: Sequelize.STRING
-      },
-      createdAt: {
-        allowNull: false,
-        type: Sequelize.DATE,
-        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP')
-      }
-    });
-  },
-  down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('permissions');
-  }
-};
-RolePermissions Migration
-
-javascript
-Copy code
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
@@ -101,10 +37,9 @@ module.exports = {
     await queryInterface.dropTable('role_permissions');
   }
 };
-Users Migration
 
-javascript
-Copy code
+
+
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
@@ -173,10 +108,8 @@ module.exports = {
     await queryInterface.dropTable('users');
   }
 };
-Venues Migration
 
-javascript
-Copy code
+
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
@@ -226,10 +159,8 @@ module.exports = {
     await queryInterface.dropTable('venues');
   }
 };
-Events Migration
 
-javascript
-Copy code
+
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
@@ -278,10 +209,8 @@ module.exports = {
     await queryInterface.dropTable('events');
   }
 };
-EventCategories Migration
 
-javascript
-Copy code
+
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
@@ -306,10 +235,8 @@ module.exports = {
     await queryInterface.dropTable('event_categories');
   }
 };
-EventCategoryMapping Migration
 
-javascript
-Copy code
+
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
@@ -351,10 +278,8 @@ module.exports = {
     await queryInterface.dropTable('event_category_mapping');
   }
 };
-EventAttachments Migration
 
-javascript
-Copy code
+
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
@@ -392,10 +317,10 @@ module.exports = {
     await queryInterface.dropTable('event_attachments');
   }
 };
-DateTime Migration
 
-javascript
-Copy code
+
+
+
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
@@ -423,10 +348,8 @@ module.exports = {
     await queryInterface.dropTable('date_time');
   }
 };
-EventDateTimeMapping Migration
 
-javascript
-Copy code
+
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
@@ -468,10 +391,8 @@ module.exports = {
     await queryInterface.dropTable('event_date_time_mapping');
   }
 };
-SeatsCategory Migration
 
-javascript
-Copy code
+
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
@@ -509,10 +430,8 @@ module.exports = {
     await queryInterface.dropTable('seats_category');
   }
 };
-Seats Migration
 
-javascript
-Copy code
+
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
@@ -553,10 +472,8 @@ module.exports = {
     await queryInterface.dropTable('seats');
   }
 };
-Booking Migration
 
-javascript
-Copy code
+
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
@@ -614,17 +531,3 @@ module.exports = {
     await queryInterface.dropTable('booking');
   }
 };
-These migration files should be placed in your migrations folder, and then you can run the migrations using the Sequelize CLI with the command:
-
-sh
-Copy code
-npx sequelize-cli db:migrate
-Make sure to adjust any configurations in your config.json for Sequelize to match your database setup.
-
-
-
-
-
-
-
-Message ChatGPT
